@@ -1,0 +1,60 @@
+<!-- page1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Positioning – Page 1: Relative &amp; Absolute</title>
+  <!-- Link to the external stylesheet for this page -->
+  <link rel="stylesheet" href="page1.css">
+</head>
+<body>
+  <!-- Navigation section linking all pages. No flex or grid is used. -->
+  <nav class="page-nav">
+    <a href="page1.html">Page 1</a> |
+    <a href="page2.html">Page 2</a> |
+    <a href="page3.html">Page 3</a>
+  </nav>
+
+  <!-- Main heading and instructions for students -->
+  <header>
+    <h1>CSS Positioning – Page 1: Relative &amp; Absolute</h1>
+    <p class="instructions">
+      Welcome! In this exercise you'll practice the difference between normal document flow, <code>position: relative</code>,
+      and <code>position: absolute</code>. Follow the tasks below and edit the CSS to see how positioning works.
+    </p>
+  </header>
+
+  <!-- Example 1: A card with a badge -->
+  <section class="example-section">
+    <h2>Example 1: Card with a Badge</h2>
+    <p class="instructions">Your task: Place the "NEW" badge in the top‑right corner of the card using
+      <code>position: absolute</code> on the badge and <code>position: relative</code> on the card.</p>
+    <!-- relative parent for the absolute badge -->
+    <div class="card">
+      <h3>Product Card</h3>
+      <p>This card is in normal flow. The badge should sit over the corner of this card without affecting the layout.</p>
+      <!-- absolute child: badge positioned relative to .card -->
+      <div class="badge">NEW</div>
+    </div>
+  </section>
+
+  <!-- Example 2: Overlapping boxes -->
+  <section class="example-section">
+    <h2>Example 2: Overlapping Boxes</h2>
+    <p class="instructions">Your task: Use <code>position: absolute</code> to make the blue box overlap the orange box.
+      The orange box stays in normal flow and the blue box should partially cover it.</p>
+    <!-- Container with relative positioning for absolute children -->
+    <div class="overlap-container">
+      <!-- Base box in normal flow -->
+      <div class="base-box">
+        <p>Base box (normal flow)</p>
+      </div>
+      <!-- Floating box positioned absolutely to overlap the base -->
+      <div class="floating-box">
+        <p>Floating box (absolute)</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

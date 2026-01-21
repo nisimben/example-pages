@@ -1,0 +1,97 @@
+/* page2.css */
+
+/* Reset and base styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Fixed top navigation bar with site title */
+.top-bar {
+  position: fixed; /* sticks to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #283593;
+  color: #ffffff;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  z-index: 1000; /* high z-index to stay above content */
+}
+
+.site-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.page-nav a {
+  color: #ffeb3b;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.page-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Instruction area spacing to avoid overlap with fixed header */
+.instructions-area {
+  padding-top: 80px; /* accounts for the height of the fixed header */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.instructions {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffca28;
+  padding: 10px 15px;
+}
+
+/* Layout for the content and sticky note */
+.content-layout {
+  padding: 15px;
+  padding-bottom: 80px; /* space for the fixed footer */
+}
+
+/* Sticky note styling */
+.sticky-note {
+  position: sticky; /* sticks when scrolling past */
+  top: 100px; /* change this value to modify when it sticks */
+  background-color: #e8f5e9;
+  border: 1px solid #81c784;
+  padding: 10px;
+  max-width: 240px;
+  margin-bottom: 20px;
+  float: right; /* simple layout without flex or grid */
+}
+
+.sticky-note h2 {
+  margin-top: 0;
+}
+
+/* Article styling */
+.article {
+  max-width: 700px;
+}
+
+.article h2 {
+  margin-top: 0;
+}
+
+.article p {
+  margin-bottom: 15px;
+}
+
+/* Fixed footer styling */
+.page-footer {
+  position: fixed; /* stays at the bottom */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #424242;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 14px;
+}

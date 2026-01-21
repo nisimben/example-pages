@@ -1,0 +1,117 @@
+/* page3.css */
+
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  line-height: 1.5;
+}
+
+/* Navigation styling */
+.page-nav {
+  background-color: #00695c;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+}
+
+.page-nav a {
+  color: #ffeb3b;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.page-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Heading and instruction styling */
+header {
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 1.8em;
+}
+
+.instructions {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffca28;
+  padding: 10px 15px;
+  margin: 10px 0 20px 0;
+}
+
+/* Section styling */
+.example-section {
+  padding: 0 20px 20px 20px;
+}
+
+.example-section h2 {
+  margin-bottom: 6px;
+}
+
+/* Poster container */
+.poster {
+  position: relative; /* relative parent for absolutely positioned children */
+  height: 240px;
+  margin-top: 20px;
+}
+
+/* BACK LAYER */
+.poster-bg {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  width: 80%;
+  height: 160px;
+  background: linear-gradient(135deg, #ff8a65, #ffca28);
+  border-radius: 12px;
+  padding: 10px;
+  color: #4e342e;
+  box-sizing: border-box;
+  z-index: 1; /* back layer */
+}
+
+/* MIDDLE LAYER */
+.poster-title {
+  position: absolute;
+  top: 60px;
+  left: 70px;
+  width: 60%;
+  color: #263238;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 10px 12px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  z-index: 2; /* middle layer */
+}
+
+/* TOP LAYER */
+.poster-badge {
+  position: absolute;
+  top: 35px;
+  right: 60px;
+  padding: 8px 16px;
+  background-color: #1e88e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 3; /* top layer */
+}
+
+/* Extra notes section */
+.extra-notes {
+  padding: 0 20px 20px 20px;
+}
+
+.extra-notes ul {
+  padding-left: 20px;
+}
+
+.extra-notes li {
+  margin-bottom: 8px;
+}

@@ -1,0 +1,92 @@
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Positioning – Page 2: Fixed &amp; Sticky</title>
+  <!-- Link to the external stylesheet for this page -->
+  <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+  <!-- Fixed top bar containing site title and navigation. It stays at the top when scrolling. -->
+  <header class="top-bar">
+    <div class="site-title">CSS Positioning – Page 2: Fixed &amp; Sticky</div>
+    <nav class="page-nav">
+      <a href="page1.html">Page 1</a> |
+      <a href="page2.html">Page 2</a> |
+      <a href="page3.html">Page 3</a>
+    </nav>
+  </header>
+
+  <!-- Instructions for students -->
+  <section class="instructions-area">
+    <p class="instructions">
+      Scroll the page to observe how the fixed navigation and footer stay anchored to the viewport.
+      Pay attention to the sticky note: it starts like a normal element and then "sticks" to the top
+      of the viewport when you scroll past it. Try adjusting the <code>top</code> value in the CSS.
+    </p>
+  </section>
+
+  <!-- Main content layout: article with sticky aside. -->
+  <main class="content-layout">
+    <!-- Sticky side note. Will stick to the top after scrolling past its initial position. -->
+    <aside class="sticky-note">
+      <h2>Sticky Note</h2>
+      <p>I start in normal flow, then stick to the top of the viewport when you scroll past me.</p>
+      <p>Change my <code>top</code> value in the CSS to control where I stick.</p>
+    </aside>
+
+    <!-- Article content. Contains many paragraphs to create scrollable content. -->
+    <article class="article">
+      <h2>Scrollable Content</h2>
+      <p>
+        This page lets you practice <strong>fixed</strong> and <strong>sticky</strong> positioning. The navigation bar
+        at the top uses <code>position: fixed</code> and stays at the top as you scroll. The footer uses the same
+        technique to remain at the bottom of the viewport.
+      </p>
+      <p>
+        The side note uses <code>position: sticky</code>. At first, it behaves like a normal block element,
+        participating in the flow. When you scroll past it, it becomes fixed relative to the viewport and stays
+        visible until you scroll past the end of its container.
+      </p>
+      <p>
+        Experiment by adjusting the <code>top</code> property of the sticky note. This property determines the point
+        at which the note sticks. Try values like <code>0</code>, <code>50px</code>, or <code>100px</code> to see how
+        it changes the sticking behaviour.
+      </p>
+      <p>
+        Notice that the main content area has extra padding on the top and bottom. This ensures that the content
+        doesn’t get hidden behind the fixed header and footer. Without this padding, part of your content would be
+        obscured when the page loads.
+      </p>
+      <p>
+        Add more paragraphs or even images to make the page longer. The more content you have, the easier it is to
+        see how the fixed and sticky elements behave while scrolling.
+      </p>
+      <p>
+        When you’re comfortable with fixed and sticky elements, move on to Page 3 where you’ll explore layering and
+        <code>z-index</code> by creating overlapping elements.
+      </p>
+      <p>
+        Keep practicing and experimenting. Understanding positioning will help you build more complex layouts without
+        relying on advanced layout systems like Flexbox or CSS Grid.
+      </p>
+      <p>
+        You can also try making your own sticky elements within this page. For example, try adding another sidebar
+        that sticks after a different scroll threshold, or create a sticky header inside the article.
+      </p>
+      <p>
+        Remember: <strong>fixed</strong> elements are removed from the normal document flow and stay glued to the
+        viewport. <strong>Sticky</strong> elements start as normal, then switch to fixed positioning after you scroll
+        past them.
+      </p>
+    </article>
+  </main>
+
+  <!-- Fixed footer. Always visible at the bottom of the viewport. -->
+  <footer class="page-footer">
+    <p>Fixed Footer – I stay at the bottom of the screen while you scroll.</p>
+  </footer>
+</body>
+</html>

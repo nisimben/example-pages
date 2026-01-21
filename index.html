@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Absolute Anchor Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .example {
+      border: 2px dashed #aaa;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+
+    /* Common nested boxes */
+    .outer, .middle, .inner {
+      border: 2px solid black;
+      padding: 20px;
+      margin: 10px;
+      position: static; /* default – we override per example */
+    }
+
+    .outer { background: #f0f8ff; }
+    .middle { background: #e0ffe0; }
+    .inner  { background: #fff0e0; }
+
+    .label {
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .abs-box {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 50px;
+      height: 30px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Example-specific positioning */
+
+    /* 1) Only OUTER is positioned (relative) */
+    .ex1 .outer { position: relative; }
+
+    /* 2) MIDDLE is closer, so it becomes the anchor */
+    .ex2 .middle { position: relative; }
+
+    /* 3) INNER is even closer; now it's the anchor */
+    .ex3 .inner { position: absolute; }
+
+    /* 4) OUTER is fixed → absolute anchors to fixed box */
+    .ex4 .outer {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 300px;
+    }
+
+    /* 5) OUTER is sticky → absolute anchors to sticky box */
+    .ex5 .outer {
+      position: sticky;
+      top: 0;
+    }
+
+    /* Make page tall so you can see sticky behavior */
+    .spacer {
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Absolute Position Anchor Demo</h1>
+  <p>
+    In all examples, the red box is:
+    <code>position: absolute; top: 5px; right: 5px;</code><br>
+    We only change which ancestor has <code>position</code> ≠ <code>static</code>.
+  </p>
+
+  <!-- Example 1 -->
+  <div class="example ex1">
+    <h2>1) Only OUTER is positioned (relative)</h2>
+    <p>Anchor = OUTER (closest non-static ancestor)</p>
+    <div class="outer">
+      <div class="label">OUTER (position: relative)</div>
+      <div class="middle">
+        <div class="label">MIDDLE (static)</div>
+        <div class="inner">
+          <div class="label">INNER (static)</div>
+          <div class="abs-box">ABS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 2 -->
+  <div class="example ex2">
+    <h2>2) MIDDLE is positioned (relative)</h2>
+    <p>Anchor = MIDDLE (closer than OUTER)</p>
+    <div class="outer">
+      <div class="label">OUTER (static)</div>
+      <div class="middle">
+        <div class="label">MIDDLE (position: relative)</div>
+        <div class="inner">
+          <div class="label">INNER (static)</div>
+          <div class="abs-box">ABS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 3 -->
+  <div class="example ex3">
+    <h2>3) INNER is positioned (absolute)</h2>
+    <p>Anchor = INNER (closest non-static ancestor)</p>
+    <div class="outer">
+      <div class="label">OUTER (static)</div>
+      <div class="middle">
+        <div class="label">MIDDLE (static)</div>
+        <div class="inner">
+          <div class="label">INNER (position: absolute)</div>
+          <div class="abs-box">ABS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 4 -->
+  <div class="example ex4">
+    <h2>4) OUTER is fixed</h2>
+    <p>Anchor = OUTER (position: fixed ⇒ absolute inside it sticks to this box)</p>
+    <div class="outer">
+      <div class="label">OUTER (position: fixed)</div>
+      <div class="middle">
+        <div class="label">MIDDLE (static)</div>
+        <div class="inner">
+          <div class="label">INNER (static)</div>
+          <div class="abs-box">ABS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 5 -->
+  <div class="example ex5">
+    <h2>5) OUTER is sticky</h2>
+    <p>Anchor = OUTER (position: sticky ⇒ acts like relative + scroll behavior)</p>
+    <div class="outer">
+      <div class="label">OUTER (position: sticky)</div>
+      <div class="middle">
+        <div class="label">MIDDLE (static)</div>
+        <div class="inner">
+          <div class="label">INNER (static)</div>
+          <div class="abs-box">ABS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+</body>
+</html>

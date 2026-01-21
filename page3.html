@@ -1,0 +1,64 @@
+<!-- page3.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Positioning – Page 3: Layers &amp; z-index</title>
+  <!-- Link to the external stylesheet for this page -->
+  <link rel="stylesheet" href="page3.css">
+</head>
+<body>
+  <!-- Navigation section linking all pages -->
+  <nav class="page-nav">
+    <a href="page1.html">Page 1</a> |
+    <a href="page2.html">Page 2</a> |
+    <a href="page3.html">Page 3</a>
+  </nav>
+
+  <!-- Main heading and instructions -->
+  <header>
+    <h1>CSS Positioning – Page 3: Layers &amp; z-index</h1>
+    <p class="instructions">
+      In this exercise, you'll create a layered composition using <code>position: relative</code> on the container and
+      <code>position: absolute</code> on the children. Adjust the <code>z-index</code> values to control which element
+      appears on top. Try experimenting with removing or changing the z-index values to see how the stacking order
+      changes.
+    </p>
+  </header>
+
+  <!-- Poster area demonstration -->
+  <section class="example-section">
+    <h2>Poster Example</h2>
+    <p class="instructions">Task: Understand the back, middle and top layers of this poster. The background rectangle,
+      title text and badge are stacked using z-index. Change their values in the CSS to reorder the layers.</p>
+    <!-- Relative parent for all absolutely positioned elements -->
+    <div class="poster">
+      <!-- BACK LAYER: background rectangle -->
+      <div class="poster-bg">
+        <p>Background Layer</p>
+      </div>
+      <!-- MIDDLE LAYER: Title text -->
+      <div class="poster-title">
+        <h2>Layered Design</h2>
+        <p>Experiment with positioning and z-index.</p>
+      </div>
+      <!-- TOP LAYER: Badge/button -->
+      <button class="poster-badge">Top Badge</button>
+      <!-- Hint for students: remove z-index to see the effect -->
+      <!-- Try removing the z-index properties in the CSS to watch the default stacking order change. -->
+    </div>
+  </section>
+
+  <!-- Additional practice suggestions -->
+  <section class="extra-notes">
+    <h2>Practice Ideas</h2>
+    <ul>
+      <li>Move the badge to a different corner by adjusting <code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code> values.</li>
+      <li>Create another badge and give it a smaller z-index so it appears below the first badge.</li>
+      <li>Nudge the title by adding a small <code>position: relative</code> shift, e.g. <code>left: 10px</code>.</li>
+      <li>Use <code>opacity</code> on the background layer to make it semi-transparent.</li>
+    </ul>
+  </section>
+</body>
+</html>
